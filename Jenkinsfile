@@ -137,6 +137,7 @@ pipeline {
                                     sudo docker-compose down || true &&
                                     sudo docker-compose pull &&
                                     sudo docker-compose up -d --remove-orphans
+                                    sleep 15
                                     curl http://localhost:5000/ping >> result.txt
                                     curl -X POST http://localhost:5000/submit -H "Content-Type: application/json" -d '{"name": "Kirill", "score": 88}' >> result.txt
                                     curl http://localhost:5000/results >> result.txt
@@ -224,12 +225,13 @@ pipeline {
                                     sudo docker-compose down || true &&
                                     sudo docker-compose pull &&
                                     sudo docker-compose up -d --remove-orphans
-                                    curl http://localhost:5000/ping >> result.txt
-                                    curl -X POST http://localhost:5000/submit -H "Content-Type: application/json" -d '{"name": "Kirill", "score": 88}' >> result.txt
-                                    curl http://localhost:5000/results >> result.txt
+                                    sleep 15
+                                    curl http://localhost:5000/ping >> PRresult.txt
+                                    curl -X POST http://localhost:5000/submit -H "Content-Type: application/json" -d '{"name": "Kirill", "score": 88}' >> PRresult.txt
+                                    curl http://localhost:5000/results >> PRresult.txt
                                 '
 
-                                scp -o StrictHostKeyChecking=no ${REMOTE_HOST}:${REMOTE_DIR}/result.txt ./result.txt
+                                scp -o StrictHostKeyChecking=no ${REMOTE_HOST}:${REMOTE_DIR}/PRresult.txt ./PRresult.txt
                             """
 
                         }
@@ -238,7 +240,7 @@ pipeline {
             }
             post {
                 always {
-                    archiveArtifacts artifacts: 'result.txt', allowEmptyArchive: true
+                    archiveArtifacts artifacts: 'PRresult.txt', allowEmptyArchive: true
                 }
             }
         }    
