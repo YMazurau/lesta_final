@@ -52,7 +52,7 @@ pipeline {
         }
 
 
-        stage('Confirm and Input Parameters') {
+        stage('Confirm and Input Parameters PR') {
             steps {
                 script {
                     def userInput = input(
