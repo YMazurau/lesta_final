@@ -52,7 +52,7 @@ pipeline {
         }
 
 
-        stage('Confirm and Input Parameters PR') {
+        stage('Confirm and Input Parameters QA') {
             steps {
                 script {
                     def userInput = input(
@@ -156,11 +156,11 @@ pipeline {
             }
         }
 
-        stage('Confirm and Input Parameters') {
+        stage('Confirm and Input Parameters PR') {
             steps {
                 script {
                     def userInput = input(
-                        id: 'userInput', message: 'Проверьте result.txt. Продолжить деплой?'
+                        id: 'prodInput', message: 'Проверьте result.txt. Продолжить деплой?'
                     )
                 }
             }
@@ -251,7 +251,7 @@ pipeline {
             cleanWs()
         }
 
-        
+
 
     }
 }
