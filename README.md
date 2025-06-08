@@ -54,7 +54,9 @@ DOCKER_CREDENTIALS_ID = 'docker-credentials-id'
 SSH_CREDENTIALS_ID = 'ssh-remote-server'
 SECRETS_FILE_ID = 'flask-secrets-file'
 ```
-- Устанавливаются плагины: Docker Pipeline, SSH Agent Plugin.
+- Устанавливаются плагины: 
+ Docker Pipeline, SSH Agent Plugin.
+ 
 Создается Item Pipeline c параметрами:
 
   Pipeline script from SCM с параметром CMS=> Git, URL репозитория, ветки и автоматическим просматриванием репозитория.
@@ -63,6 +65,7 @@ SECRETS_FILE_ID = 'flask-secrets-file'
 Указав эти параметры Jenkins автоматически находит в репозитории нужные файлы, указанные в jenkinsfile и выполняется все шаги сборки и развертывания приложения.
 
 - Запуск Pipeline:
+
 Запуск осуществляется с указанием параметров ( "Собрать с параметрами"), где задается REMOTE_HOST_IP и REMOTE_USER. Если переменные не меняются, можно указать в jenkinsfile значения по умолчанию.
 
 
