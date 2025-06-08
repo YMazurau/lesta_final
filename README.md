@@ -54,7 +54,7 @@ DOCKER_CREDENTIALS_ID = 'docker-credentials-id'
 SSH_CREDENTIALS_ID = 'ssh-remote-server'
 SECRETS_FILE_ID = 'flask-secrets-file'
 ```
-- Устанавливаются плагины: 
+ Устанавливаются плагины: 
  Docker Pipeline, SSH Agent Plugin.
  
 Создается Item Pipeline c параметрами:
