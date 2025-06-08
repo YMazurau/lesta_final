@@ -1,6 +1,6 @@
 # Описание приложения:
 
-- Flask приложение, написанное на Python. Репозиторий https://github.com/YMazurau/lesta_final.
+- Flask приложение, написанное на Python.
 
 - Требования указаны в файле requirements.
 
@@ -32,7 +32,7 @@ curl http://localhost:5000/results
 
 Для автоматизации развертывания приложения на удаленных хостах используется инструмент Jenkins.
 
-Для хранения кода и управления версиями используется GitHub. https://github.com/YMazurau/lesta_final
+Для хранения кода и управления версиями используется GitHub.
 
 Для хранения Docker image используется DockerHub. https://hub.docker.com/repository/docker/ymazurau/flask-api/general
 
